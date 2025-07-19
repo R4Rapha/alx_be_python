@@ -1,30 +1,28 @@
-# Ask the user to enter a task
+# Ask the user for the task
 task = input("Enter your task: ")
 
-# Ask for the priority of the task (high/medium/low)
+# Ask the user for the priority level
 priority = input("Priority (high/medium/low): ").lower()
 
-# Ask if the task is time-bound (yes/no)
+# Ask if the task is time-bound
 time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Print a reminder message based on the priority and time-bound status
-if priority == "high":
-    if time_bound == "yes":
-        print(f"Reminder: '{task}' is a high priority task that requires immediate attention today!")
-    else:
-        print(f"Reminder: '{task}' is a high priority task. Consider completing it when you have free time.")
-elif priority == "medium":
-    if time_bound == "yes":
-        print(f"Reminder: '{task}' is a medium priority task that requires immediate attention today!")
-    else:
-        print(f"Reminder: '{task}' is a medium priority task. Consider completing it when you have free time.")
-elif priority == "low":
-    if time_bound == "yes":
-        print(f"Reminder: '{task}' is a low priority task that requires immediate attention today!")
-    else:
-        print(f"Reminder: '{task}' is a low priority task. Consider completing it when you have free time.")
+# Use match-case to customize the message based on priority
+match priority:
+    case "high":
+        reminder = f"Reminder: '{task}' is a HIGH priority task"
+    case "medium":
+        reminder = f"Reminder: '{task}' is a MEDIUM priority task"
+    case "low":
+        reminder = f"Reminder: '{task}' is a LOW priority task"
+    case _:
+        reminder = f"Reminder: '{task}' has an UNKNOWN priority"
+
+# Use if to check if task is time-sensitive and adjust the reminder
+if time_bound == "yes":
+    reminder += " and it requires immediate action!"
 else:
-    if time_bound == "yes":
-        print(f"Reminder: '{task}' has an unknown priority level that requires immediate attention today!")
-    else:
-        print(f"Reminder: '{task}' has an unknown priority level. Consider completing it when you have free time.")
+    reminder += " and can be done at your convenience."
+
+# Final print statement
+print(f"\n{reminder}")
