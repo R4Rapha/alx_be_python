@@ -18,11 +18,11 @@ match priority:
     case _:
         reminder = f"Reminder: '{task}' has an UNKNOWN priority"
 
-# Use if to check if task is time-sensitive and adjust the reminder
+# Customized message logic
 if time_bound == "yes":
-    reminder += " and it requires immediate action!"
+    print(f"Reminder: '{task}' is a {priority} priority task that requires immediate attention today!")
 else:
-    reminder += " and can be done at your convenience."
+    print(f"Note: '{task}' is a {priority} priority task. Consider completing it when you have free time.")
 
 # Final print statement
 print(f"\n{reminder}")
