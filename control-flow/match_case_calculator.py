@@ -5,7 +5,7 @@ num1 = float(input("Enter the first number: "))
 num2 = float(input("Enter the second number: "))
 
 # Ask user for the operation
-operation = input("Enter the operation (+, -, *, /): ")
+operation = input("Enter the operation (+, -, *, /):")
 
 # Perform the operation using match case
 match operation:
@@ -19,6 +19,7 @@ match operation:
         result = num1 * num2
         print(f"The result is {result}")
     case '/':
+        
         # Handle division by zero
         if num2 == 0:
             print("Cannot divide by zero.")
