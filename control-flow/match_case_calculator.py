@@ -5,7 +5,7 @@ num1 = float(input("Enter the first number: "))
 num2 = float(input("Enter the second number: "))
 
 # Ask user for the operation
-operation = input("Enter the operation (+, -, *, /):")
+operation = input("Enter the operation (+, -, *, \): ")
 
 # Perform the operation using match case
 match operation:
